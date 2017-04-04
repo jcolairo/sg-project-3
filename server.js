@@ -23,7 +23,7 @@ app.use(express.static('frontend'));
 app.use(express.static('node_modules'));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-// app.use(router);
+app.use(router);
 
 app.listen(PORT, function() {
   console.log('App is running on port', PORT);

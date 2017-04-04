@@ -8,9 +8,9 @@
     "npm": ">= 3"
   },
   "scripts": {
-    "nodemon": "MONGODB_URI=mongodb://localhost/sg-webdev4-project2 nodemon server.js",
-    "seed": "node db/seed",
-    "test": "MONGODB_URI=mongodb://localhost/sg-webdev4-project2-test node db/seed && mocha test/*.spec.js"
+    "nodemon": "MONGODB_URI=mongodb://localhost/sg-project-3 nodemon server.js",
+    "seed": "node api/config/seed",
+    "test": "MONGODB_URI=mongodb://localhost/sg-project-3-test node db/seed && mocha test/*.spec.js"
   },
   "author": "",
   "license": "ISC",
