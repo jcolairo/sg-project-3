@@ -1,0 +1,17 @@
+{
+  "name": "api",
+  "homepage": "https://github.com/jcolairo/sg-project-3",
+  "authors": [
+    "James Colairo <jcolairo@spartaglobal.co>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
