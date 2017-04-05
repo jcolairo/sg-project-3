@@ -1,0 +1,11 @@
+<section ng-controller="MapController as map">
+  <form >
+    <input ng-model="map.placeName">
+    <input type="submit" ng-click="map.getPlaceDetails()">
+  </form>
+
+
+  <p ng-repeat="place in map.maps"> {{place.formatted_address}}</p>
+  <div id="map"></div>
+  <!-- Replace the value of the key parameter with your own API key. -->
+</section>

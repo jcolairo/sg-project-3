@@ -6,10 +6,6 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/sg-project-3';
 
-// configure theGoogleDB
-// theGoogleMaps.common.api_key = process.env.GMS_API_KEY;
-// theGooglePlaces.common.api_key = process.env.GPS_API_KEY;
-
 mongoose.connect(MONGODB_URI, function (err) {
   if (err) {
     console.error('Could not connect to Mongo: err:', err);

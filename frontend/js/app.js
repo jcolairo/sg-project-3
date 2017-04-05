@@ -5,10 +5,6 @@ function MainRouter ($stateProvider, $urlRouterProvider, AuthFactory) {
       url: '/',
       templateUrl: '/states/home.html'
     })
-    // .state('crime', {
-    //   url: '/crimes',
-    //   templateUrl: '/states/crime.html'
-    // })
     .state('signup', {
       url: '/signup',
       templateUrl: '/states/signup.html'
@@ -20,6 +16,10 @@ function MainRouter ($stateProvider, $urlRouterProvider, AuthFactory) {
     .state('auth-required', {
       url: '/authrequired',
       templateUrl: '/states/auth-required.html'
+    })
+    .state('map', {
+      url: '/map',
+      templateUrl: '/states/map.html'
     })
     .state('crime', {
       url: '/crime',
