@@ -1,8 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var request = require('request');
 
-var policeController = require('../controllers/police.controller');
 
+
+
+
+// var policeController = require('../controllers/police.controller');
+//
 // router.route('/police')
 //   .get(policeController.getAll)
 //   .post(policeController.createTodo);
