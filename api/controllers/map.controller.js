@@ -2,15 +2,15 @@ var request = require('request');
 var googleData = require('../config/google-data');
 
 function getMaps(req, res) {
-  var place = req.query.place || "";
+  var place = req.query.place || '';
   if (!place.length) {
-    return res.status(500).json({message: "please provide a search term "})
+    return res.status(500).json({message: 'please provide a search term '});
   }
 
   var mapUrl = [
     googleData.GMS_API_BASE_URL,
     place.split(' ').join('+')
-  ].join('')
+  ].join('');
 
   request(mapUrl, function (error, response, body) {
     var mapsJson;
@@ -22,13 +22,20 @@ function getMaps(req, res) {
     }
     mapsJson = JSON.parse(body);
     // console.log('maps:', mapsJson);
-
     res.status(200).json(mapsJson.results);
   });
 }
 
-function getPlaces(res, res) {
-  request(`${googleData.GPS_API_BASE_URL}` + `${googleData.GPS_API_SEARCH}` + `${googleData.GPS_API_KEYCODE}`, function(error, res, body) {
+function getPlaces(req, res) {
+  var place = req.query.place || '';
+  if(!place.length) {
+    return res.status(400).json({message: 'please provide a search term'});
+  }
+
+  var placeUrl = [ googleData.GPS_API_BASE_URL ];
+  // var placeKey = [ googleData.GPS_API_KEY ];
+
+  request(placeUrl, function(error, response, body) {
     var placesJson;
 
     if (error) {
@@ -37,9 +44,9 @@ function getPlaces(res, res) {
       return;
     }
     placesJson = JSON.parse(body);
-    console.log('maps:', placesJson);
-    res.status(200).json(placesJson);
-  })
+    console.log('places:', placesJson);
+    res.status(200).json(placesJson.results);
+  });
 }
 
 module.exports = {

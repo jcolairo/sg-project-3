@@ -3,10 +3,13 @@ function MapController(MapFactory) {
 
   function init() {
     console.log('MapController', controller);
-    controller.placeName = '1 castle yard';
-
-
+    controller.placeName = '';
   }
+
+  controller.selectLocation = function (place) {
+    console.log('selected place:', place);
+  };
+
   controller.getPlaceDetails = function () {
     MapFactory.getAll(controller.placeName).then(
       (success) => {
@@ -19,8 +22,7 @@ function MapController(MapFactory) {
       }
     );
   };
-
-
+  init();
 }
 
 MapController.$inject = ['MapFactory'];

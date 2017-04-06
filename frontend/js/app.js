@@ -50,6 +50,5 @@ AuthCatcher.$inject = ['$rootScope', '$state'];
 
 angular
   .module('PoliceApp', ['ui.router', 'firebase'])
-  .constant('API_URL', 'http://localhost:3000')
   .config(MainRouter)
   .run(AuthCatcher);

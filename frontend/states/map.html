@@ -1,11 +1,18 @@
 <section ng-controller="MapController as map">
   <form >
+    <p>Enter location: </p>
     <input ng-model="map.placeName">
     <input type="submit" ng-click="map.getPlaceDetails()">
   </form>
 
 
-  <p ng-repeat="place in map.maps"> {{place.formatted_address}}</p>
+  <p ng-repeat="place in map.maps">
+    {{place.formatted_address}}
+    <strong>Lat:</strong> {{ place.geometry.location.lat}}
+    <strong>Long:</strong> {{ place.geometry.location.lng}}
+    <strong>PlaceId</strong> {{ place.place_id}}
+    <button ng-click="map.selectLocation(place)">show crimes</button>
+  </p>
   <div id="map"></div>
   <!-- Replace the value of the key parameter with your own API key. -->
 </section>

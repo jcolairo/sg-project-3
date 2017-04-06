@@ -1,3 +1,28 @@
-<h2>Crimes</h2>
+<section ng-controller="CrimeController as crime">
 
-<p>something here about crimes</p>
+  <h2>Crimes</h2>
+
+  <form >
+    <p>Type of crime:</p>
+    <input ng-model="crime.crimeName">
+  </form>
+  <form >
+    <p>Crime Lat:</p>
+    <input ng-model="crime.crimeLat">
+  </form>
+  <form >
+    <p>Crime Long:</p>
+    <input ng-model="crime.crimeLng">
+  </form>
+  <form >
+    <p>Crime Date:</p>
+    <input ng-model="crime.crimeDate">
+    <input type="submit" ng-click="crime.getCrimeDetails()">
+  </form>
+
+  <p ng-repeat="place in crime.crimes">
+
+  </p>
+
+
+</section>
