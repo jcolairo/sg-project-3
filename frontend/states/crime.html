@@ -1,28 +1,55 @@
 <section ng-controller="CrimeController as crime">
 
-  <h2>Crimes</h2>
+    <form >
+      <p>Enter location: </p>
+      <input ng-model="map.placeName">
+      <input type="submit" ng-click="map.getPlaceDetails()">
+    </form>
 
-  <form >
+
+    <!-- <p ng-repeat="place in map.maps">
+      {{place.formatted_address}}
+      <strong>Lat:</strong> {{ place.geometry.location.lat}}
+      <strong>Long:</strong> {{ place.geometry.location.lng}}
+      <strong>PlaceId</strong> {{ place.place_id}}
+      <button ng-click="map.selectLocation(place)">show crimes</button>
+    </p> -->
+    <!-- <div id="map"></div> -->
+    <!-- Replace the value of the key parameter with your own API key. -->
+
+
+  <h2>Crimes</h2>
+<section >
+  <form>
     <p>Type of crime:</p>
     <input ng-model="crime.crimeName">
-  </form>
-  <form >
-    <p>Crime Lat:</p>
-    <input ng-model="crime.crimeLat">
-  </form>
-  <form >
-    <p>Crime Long:</p>
-    <input ng-model="crime.crimeLng">
-  </form>
-  <form >
-    <p>Crime Date:</p>
-    <input ng-model="crime.crimeDate">
-    <input type="submit" ng-click="crime.getCrimeDetails()">
+
+
+    <div ng-repeat="place in map.maps track by $index">
+      {{place.formatted_address}}
+      <strong>Lat:</strong> {{ place.geometry.location.lat}}
+      <strong>Long:</strong> {{ place.geometry.location.lng}}
+      <strong>PlaceId</strong> {{ place.place_id}}
+      <button ng-click="map.selectLocation(place)">show crimes</button>
+      
+      <p>Crime Lat:</p>
+      {{ place.geometry.location.lat }}
+      <input ng-model="place.geometry.location.lat" value="{{place.geometry.location.lat}}" type="text">
+
+      <p>Crime Long:</p>
+      {{ place.geometry.location.lng}}
+      <input ng-model="place.geometry.location.lng" ng-value="place.geometry.location.lng" type="text">
+
+      <p>Crime Date:</p>
+      <input ng-model="crime.crimeDate">
+      <input type="submit" ng-click="crime.getCrimeDetails(place.geometry.location.lat, place.geometry.location.lng)">
+    </div>
+
   </form>
 
-  <p ng-repeat="place in crime.crimes">
+</section>
 
+  <p ng-repeat="c in crime.crimeName track by $index">
+    {{ crime }}
   </p>
-
-
 </section>

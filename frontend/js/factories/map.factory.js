@@ -16,7 +16,7 @@ function MapFactory($http) {
     }
   };
 }
-
+MapFactory.$inject = ['$http'];
 
 angular
   .module('PoliceApp')

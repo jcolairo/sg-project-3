@@ -8,18 +8,14 @@ function CrimeController(CrimeFactory) {
     controller.crimeLng = '';
     controller.crimeDate = '';
   }
-  controller.getCrimeDetails = function () {
+  controller.getCrimeDetails = function (lat, lng) {
     CrimeFactory.getAllCrimes(
       controller.crimeName,
-      controller.crimeLat,
-      controller.crimeLng,
+      lat,
+      lng,
       controller.crimeDate
     ).then(
       (success) => {
-        // controller.crimeName = '';
-        // controller.crimeLat = '';
-        // controller.crimeLng = '';
-        // controller.crimeDate = '';
         console.log('Get crimes:', success.data);
       },
       (error) => {

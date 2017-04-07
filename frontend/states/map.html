@@ -11,7 +11,7 @@
     <strong>Lat:</strong> {{ place.geometry.location.lat}}
     <strong>Long:</strong> {{ place.geometry.location.lng}}
     <strong>PlaceId</strong> {{ place.place_id}}
-    <button ng-click="map.selectLocation(place)">show crimes</button>
+    <button ng-click="map.selectLocation(place)" ui-sref="crime">show crimes</button>
   </p>
   <div id="map"></div>
   <!-- Replace the value of the key parameter with your own API key. -->
