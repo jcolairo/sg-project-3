@@ -16,6 +16,7 @@ function CrimeController(CrimeFactory) {
       controller.crimeDate
     ).then(
       (success) => {
+        controller.crimes = success.data;
         console.log('Get crimes:', success.data);
       },
       (error) => {

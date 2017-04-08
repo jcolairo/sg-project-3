@@ -22,3 +22,12 @@ html, body {
   line-height: 30px;
   padding-left: 10px;
 }
+
+.showCrime {
+  padding: 50px;
+}
+
+* {
+  background-color: #374f6b;
+  color: white;
+}
