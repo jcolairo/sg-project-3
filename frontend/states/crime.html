@@ -40,10 +40,11 @@
       <input ng-model="crime.crimeDate" placeholder="2017-01">
       <input type="submit" ng-click="crime.getCrimeDetails(place.geometry.location.lat, place.geometry.location.lng)" class="submitButton"></p>
 
-
     </div>
 
   </form>
+
+  <ui-gmap-google-map center="map.map.center" zoom="map.map.zoom"></ui-gmap-google-map>
 
   <div ng-repeat="place in map.maps track by $index">
     <p>
@@ -55,48 +56,48 @@
         <div ng-repeat="c in crime.crimes | limitTo: 1 track by $index" >
 
          <p ng-show="{{ c.category === 'anti-social-behaviour'}}">
-            There has been {{ crime.crimes.length }} Anti Social Behaviour related crimes in {{ place.formatted_address }}
+            There has been <strong>{{ crime.crimes.length }}</strong>Anti Social Behaviour related crimes in {{ place.formatted_address }} in {{ c.month}}
         </p>
          <p  ng-show="{{ c.category === 'bicycle-theft'}}">
-            There has been {{ crime.crimes.length }} Bicycle Theft related crimes in {{ place.formatted_address }}
-  </p>
+            There has been <strong>{{ crime.crimes.length }}</strong>Bicycle Theft related crimes in {{ place.formatted_address }} in {{ c.month}}
+        </p>
          <p  ng-show="{{ c.category === 'burglary'}}">
-            There has been {{ crime.crimes.length }} Burglary related crimes in {{ place.formatted_address}}
-  </p>
+            There has been <strong>{{ crime.crimes.length }}</strong>Burglary related crimes in {{ place.formatted_address}} in {{ c.month}}
+        </p>
          <p ng-show="{{ c.category === 'criminal-damage-arson'}}">
-            There has been {{ crime.crimes.length }} Criminal Damage Arson related crimes in {{ place.formatted_address}}
-  </p>
+            There has been <strong>{{ crime.crimes.length }}</strong>Criminal Damage Arson related crimes in {{ place.formatted_address}} in {{ c.month}}
+        </p>
          <p ng-show="{{ c.category === 'drugs'}}">
-            There has been {{ crime.crimes.length }} Drugs related crimes in {{ place.formatted_address}}
-  </p>
+            There has been <strong>{{ crime.crimes.length }}</strong>Drugs related crimes in {{ place.formatted_address}} in {{ c.month}}
+        </p>
          <p  ng-show="{{ c.category === 'other-theft'}}">
-            There has been {{ crime.crimes.length }} Other Theft related crimes in {{ place.formatted_address}}
-  </p>
+            There has been <strong>{{ crime.crimes.length }}</strong>Other Theft related crimes in {{ place.formatted_address}} in {{ c.month}}
+        </p>
          <p  ng-show="{{ c.category === 'possession-of-weapons'}}">
-            There has been {{ crime.crimes.length }} Possession of Weapons related crimes in {{ place.formatted_address}}
-  </p>
+            There has been <strong>{{ crime.crimes.length }}</strong>Possession of Weapons related crimes in {{ place.formatted_address}} in {{ c.month}}
+        </p>
          <p  ng-show="{{ c.category === 'public-order'}}">
-            There has been {{ crime.crimes.length }} Public Order related crimes in {{ place.formatted_address}}
-  </p>
+            There has been <strong>{{ crime.crimes.length }}</strong>Public Order related crimes in {{ place.formatted_address}} in {{ c.month}}
+        </p>
          <p ng-show="{{ c.category === 'robbery'}}">
-            There has been {{ crime.crimes.length }} Robbery related crimes in {{ place.formatted_address}}
-  </p>
+            There has been <strong>{{ crime.crimes.length }}</strong>Robbery related crimes in {{ place.formatted_address}} in {{ c.month}}
+        </p>
          <p ng-show="{{ c.category === 'shoplifting'}}">
-            There has been {{ crime.crimes.length }} Shoplifting related crimes in {{ place.formatted_address}}
-  </p>
+            There has been <strong>{{ crime.crimes.length }}</strong>Shoplifting related crimes in {{ place.formatted_address}} in {{ c.month}}
+        </p>
          <p ng-show="{{ c.category === 'theft-from-the-person'}}">
-            There has been {{ crime.crimes.length }} Theft from the Person related crimes in {{ place.formatted_address}}
-  </p>
+            There has been <strong>{{ crime.crimes.length }}</strong>Theft from the Person related crimes in {{ place.formatted_address}} in {{ c.month}}
+        </p>
          <p  ng-show="{{ c.category === 'vehicle-crime'}}">
-            There has been {{ crime.crimes.length }} Vehicle Crime related crimes in {{ place.formatted_address}}
-  </p>
+            There has been <strong>{{ crime.crimes.length }}</strong>Vehicle Crime related crimes in {{ place.formatted_address}} in {{ c.month}}
+        </p>
          <p  ng-show="{{ c.category === 'violent-crime'}}">
-            There has been {{ crime.crimes.length }} Violent Crime related crimes in {{ place.formatted_address}}
-  </p>
+            There has been <strong>{{ crime.crimes.length }}</strong>Violent Crime related crimes in {{ place.formatted_address}} in {{ c.month}}
+        </p>
          <p  ng-show="{{ c.category === 'other-crime'}}">
-            There has been {{ crime.crimes.length }} Other Crime related crimes in {{ place.formatted_address}}
-  </p>
-</div>
+            There has been <strong>{{ crime.crimes.length }}</strong>Other Crime related crimes in {{ place.formatted_address}} in {{ c.month}}
+        </p>
+      </div>
 
     </p>
   </div>

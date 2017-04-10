@@ -49,6 +49,6 @@ function AuthCatcher($rootScope, $state) {
 AuthCatcher.$inject = ['$rootScope', '$state'];
 
 angular
-  .module('PoliceApp', ['ui.router', 'firebase'])
+  .module('PoliceApp', ['ui.router', 'firebase', 'uiGmapgoogle-maps'])
   .config(MainRouter)
   .run(AuthCatcher);

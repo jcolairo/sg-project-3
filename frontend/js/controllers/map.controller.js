@@ -4,6 +4,7 @@ function MapController(MapFactory) {
   function init() {
     console.log('MapController', controller);
     controller.placeName = '';
+    controller.map = { center: { latitude: 51.45, longitude: -0.3}, zoom: 15};
   }
 
   controller.selectLocation = function (place) {

@@ -15,16 +15,16 @@
   <script src="js/factories/auth.factory.js"></script>
   <script src="js/factories/crime.factory.js"></script>
   <script src="js/controllers/map.controller.js"></script>
-  <script src="js/controllers/google.controller.js"></script>
   <script src="js/controllers/crime.controller.js"></script>
   <script src="js/controllers/auth.controller.js"></script>
 
   <link href="css/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 
-  <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0hiCVyDeo95P76g7hOFGL2zWWEnSKaKs&callback=initMap">
-    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-simple-logger/0.1.7/angular-simple-logger.min.js" charset="utf-8"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+  <script src="angular-google-maps/dist/angular-google-maps.min.js"></script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,7 +66,7 @@
     <ui-gmap-google-map center="map.center" zoom="map.center"></ui-gmap-google-map>
   </div> -->
 
-  <script>
+  <!-- <script>
         var map;
         function initMap() {
           map = new google.maps.Map(document.getElementById('map'), {
@@ -88,7 +88,7 @@
     margin: 0;
     padding: 0;
   }
-</style>
+</style> -->
   <section ng-controller="MapController as map" ui-view class="bottom">
 
   </section>

@@ -12,14 +12,14 @@ h1 {
   display: inline-block;
 }
 * {
-  background-color: #1b4080;
-  color: white;
+
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   text-align: center;
   padding: 10px;
 }
 body {
   background-color: #1b4080;
+  color: white;
 }
 .policeLogo {
   height: 75px;
@@ -33,10 +33,6 @@ body {
 .submitButton {
   height: 30px;
   padding-top: 1px;
-}
-#map-canvas {
-  height: 500px;
-  width: 500px;
 }
 input {
   height: 30px;
@@ -52,13 +48,7 @@ input {
   height: 200px;
   display: none;
 }
-#map{
-  height: 500px;
-  width: 500px;
-  padding:0;
-  margin:0;
-  display: inline-block;
-}
 ol {
   display: inline-block;
 }
+.angular-google-map-container { height: 400px; }
