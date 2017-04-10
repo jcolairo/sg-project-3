@@ -1,6 +1,7 @@
 function CrimeFactory($http, $httpParamSerializer) {
   return {
     getAllCrimes: function(crimeName, crimeLat, crimeLng, crimeDate) {
+      crimeName = crimeName.split(' ').join('-');
       var params = {
         crime: crimeName,
         lat: crimeLat,
