@@ -15,13 +15,16 @@
   <script src="js/factories/auth.factory.js"></script>
   <script src="js/factories/crime.factory.js"></script>
   <script src="js/controllers/map.controller.js"></script>
+  <script src="js/controllers/google.controller.js"></script>
   <script src="js/controllers/crime.controller.js"></script>
   <script src="js/controllers/auth.controller.js"></script>
 
   <link href="css/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 
-  <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0hiCVyDeo95P76g7hOFGL2zWWEnSKaKs&callback=initMap">
+    </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +39,6 @@
     <nav>
       <a ui-sref="home" class="btn btn-primary">Home</a>
       <a ui-sref="crime" class="btn btn-primary">Crimes</a>
-      <a ui-sref="map" class="btn btn-primary">Map</a>
     </nav>
 
     <img ng-src="./css/images/metpolice-logo1.png" class="policeLogo">
@@ -60,6 +62,33 @@
       </div>
   </section>
 
+  <!-- <div id="map-canvas" ng-controller="GoogleController as google">
+    <ui-gmap-google-map center="map.center" zoom="map.center"></ui-gmap-google-map>
+  </div> -->
+
+  <script>
+        var map;
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 51.45, lng: -0.3},
+            zoom: 15
+          });
+        }
+      </script>
+
+    <div id="map">
+    </div>
+    <style>
+  #map {
+    height: 500px;
+    width: 500px;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
   <section ng-controller="MapController as map" ui-view class="bottom">
 
   </section>
