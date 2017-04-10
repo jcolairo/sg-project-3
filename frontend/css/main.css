@@ -1,33 +1,64 @@
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
-#map {
-  height: 100%;
+section {
+  padding: 20px;
 }
-/* Optional: Makes the sample page fill the window. */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+h1 {
+  color: white;
 }
-#floating-panel {
-  position: absolute;
-  top: 10px;
-  left: 25%;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-  text-align: center;
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
-}
-
 .showCrime {
   padding: 50px;
+  padding-top: 0px;
 }
-
+.locationForm p {
+  display: inline-block;
+}
 * {
-  background-color: #374f6b;
+  background-color: #1b4080;
   color: white;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align: center;
+  padding: 10px;
+}
+body {
+  background-color: #1b4080;
+}
+.policeLogo {
+  height: 75px;
+  padding: 0px;
+}
+.googleButton {
+  border: 0px;
+  height: 45px;
+  padding: 0px;
+}
+.submitButton {
+  height: 30px;
+  padding-top: 1px;
+}
+#map-canvas {
+  height: 500px;
+  width: 500px;
+}
+input {
+  height: 30px;
+  border-radius: 5px;
+}
+.top {
+  padding-bottom: 0px;
+}
+.bottom {
+  padding-top: 0px;
+}
+.officer-bob {
+  height: 200px;
+  display: none;
+}
+#map{
+  height: 500px;
+  width: 500px;
+  padding:0;
+  margin:0;
+  display: inline-block;
+}
+ol {
+  display: inline-block;
 }

@@ -18,8 +18,10 @@
   <script src="js/controllers/crime.controller.js"></script>
   <script src="js/controllers/auth.controller.js"></script>
 
-
+  <link href="css/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+
+  <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,32 +30,37 @@
 </head>
 
 <body ng-controller="AuthController as auth">
-  <h1>Title</h1>
+  <section class="top">
+    <h1>Crime in an Area</h1>
 
-  <nav>
-    <a ui-sref="home">Home</a>
-    <a ui-sref="crime">Crimes</a>
-    <a ui-sref="map">Map</a>
-  </nav>
+    <nav>
+      <a ui-sref="home" class="btn btn-primary">Home</a>
+      <a ui-sref="crime" class="btn btn-primary">Crimes</a>
+      <a ui-sref="map" class="btn btn-primary">Map</a>
+    </nav>
 
-  <div ng-if="auth.user">
-        <p><strong>
-        	Welcome {{ auth.user.email }}!, remember crime is bad!
-        </strong></p>
-        <p>
-          <a href="#" ng-click="auth.signOut()">Sign Out</a>
-        </p>
+    <img ng-src="./css/images/metpolice-logo1.png" class="policeLogo">
+    <img ng-src="./css/images/metpolice-logo2.png" class="policeLogo">
+
+    <div ng-if="auth.user">
+          <p class="email">
+          	Welcome {{ auth.user.email }}!, remember crime is bad!
+          </p>
+          <p>
+            <a href="#" ng-click="auth.signOut()" class="btn btn-primary">Sign Out</a>
+          </p>
+        </div>
+
+        <div ng-if="!auth.user">
+          <p>Welcome new person!!</p>
+
+          <a ui-sref="login" class="btn btn-primary">Sign In</a> to sign in.
+          <br>
+          <a ui-sref="signup" class="btn btn-primary">Register</a> to register and see our secrets!
       </div>
+  </section>
 
-      <div ng-if="!auth.user">
-        <p>Welcome new person!!</p>
-
-        <a ui-sref="login">Sign In</a> to sign in.
-        <br>
-        <a ui-sref="signup">Register</a> to register and see our secrets!
-      </div>
-
-  <section ng-controller="MapController as map" ui-view>
+  <section ng-controller="MapController as map" ui-view class="bottom">
 
   </section>
 

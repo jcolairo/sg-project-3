@@ -1,59 +1,106 @@
 <section ng-controller="CrimeController as crime" class="showCrime">
+  <h2>Crimes</h2>
 
-    <form>
-      <p>Enter location: </p>
-      <input ng-model="map.placeName">
-      <input type="submit" ng-click="map.getPlaceDetails()">
+    <div class="officer-bob">
+      <img ng-src="./css/images/officer-bob.png" class="officer-bob"><p>This is Bob</p>
+    </div>
+
+    <form class="locationForm">
+      <p>Enter location: </p> <input ng-model="map.placeName">
+      <button type="submit" ng-click="map.getPlaceDetails()" class="googleButton">
+        <img ng-src="./css/images/google-marker.png" class="googleButton">
+      </button>
     </form>
 
+    <!-- <div id="map-canvas">
+      <google-maps
+        lat="51"
+        lng="-0.3"
+        apikey="GMS_API_KEY">
 
-    <!-- <p ng-repeat="place in map.maps">
-      {{place.formatted_address}}
-      <strong>Lat:</strong> {{ place.geometry.location.lat}}
-      <strong>Long:</strong> {{ place.geometry.location.lng}}
-      <strong>PlaceId</strong> {{ place.place_id}}
-      <button ng-click="map.selectLocation(place)">show crimes</button>
-    </p> -->
-    <!-- <div id="map"></div> -->
-    <!-- Replace the value of the key parameter with your own API key. -->
+      </google-maps>
+    </div> -->
 
 
-  <h2>Crimes</h2>
 <section >
   <form>
-    <p>Type of crime:</p>
-    <input ng-model="crime.crimeName">
 
+    <div ng-repeat="place in map.maps track by $index">
+      <p>Type of crime: <input ng-model="crime.crimeName" >
+      </p>
 
-    <div ng-repeat="place in map.maps track by $index" class="showCrime">
-      {{place.formatted_address}}
-      <strong>PlaceId</strong> {{ place.place_id}}
+      <p><strong>Address:</strong> {{place.formatted_address}}</p>
+
 
       <input ng-model="place.geometry.location.lat" value="{{place.geometry.location.lat}}" type="hidden">
 
       <input ng-model="place.geometry.location.lng" ng-value="place.geometry.location.lng" type="hidden">
 
-      <p>Crime Date:</p>
+      <p><strong>Crime Date:</strong>
       <input ng-model="crime.crimeDate" placeholder="2017-01">
-      <input type="submit" ng-click="crime.getCrimeDetails(place.geometry.location.lat, place.geometry.location.lng)" >
-
+      <input type="submit" ng-click="crime.getCrimeDetails(place.geometry.location.lat, place.geometry.location.lng)" class="submitButton"></p>
 
 
     </div>
 
   </form>
 
-  <div >
+  <div ng-repeat="place in map.maps track by $index">
     <p>
-     <ol >
-       <li ng-repeat="c in crime.crimes track by $index">
+
+      <!-- <li ng-repeat="c in crime.crimes | filter:searchBox:c.category" ng-show="{{ c.category === ''}}">
          {{ c.category }}
-       </li>
-     </ol>
+       </li> -->
+
+        <div ng-repeat="c in crime.crimes | limitTo: 1 track by $index" >
+
+         <p ng-show="{{ c.category === 'anti-social-behaviour'}}">
+            There has been {{ crime.crimes.length }} Anti Social Behaviour related crimes in {{ place.formatted_address }}
+        </p>
+         <p  ng-show="{{ c.category === 'bicycle-theft'}}">
+            There has been {{ crime.crimes.length }} Bicycle Theft related crimes in {{ place.formatted_address }}
+  </p>
+         <p  ng-show="{{ c.category === 'burglary'}}">
+            There has been {{ crime.crimes.length }} Burglary related crimes in {{ place.formatted_address}}
+  </p>
+         <p ng-show="{{ c.category === 'criminal-damage-arson'}}">
+            There has been {{ crime.crimes.length }} Criminal Damage Arson related crimes in {{ place.formatted_address}}
+  </p>
+         <p ng-show="{{ c.category === 'drugs'}}">
+            There has been {{ crime.crimes.length }} Drugs related crimes in {{ place.formatted_address}}
+  </p>
+         <p  ng-show="{{ c.category === 'other-theft'}}">
+            There has been {{ crime.crimes.length }} Other Theft related crimes in {{ place.formatted_address}}
+  </p>
+         <p  ng-show="{{ c.category === 'possession-of-weapons'}}">
+            There has been {{ crime.crimes.length }} Possession of Weapons related crimes in {{ place.formatted_address}}
+  </p>
+         <p  ng-show="{{ c.category === 'public-order'}}">
+            There has been {{ crime.crimes.length }} Public Order related crimes in {{ place.formatted_address}}
+  </p>
+         <p ng-show="{{ c.category === 'robbery'}}">
+            There has been {{ crime.crimes.length }} Robbery related crimes in {{ place.formatted_address}}
+  </p>
+         <p ng-show="{{ c.category === 'shoplifting'}}">
+            There has been {{ crime.crimes.length }} Shoplifting related crimes in {{ place.formatted_address}}
+  </p>
+         <p ng-show="{{ c.category === 'theft-from-the-person'}}">
+            There has been {{ crime.crimes.length }} Theft from the Person related crimes in {{ place.formatted_address}}
+  </p>
+         <p  ng-show="{{ c.category === 'vehicle-crime'}}">
+            There has been {{ crime.crimes.length }} Vehicle Crime related crimes in {{ place.formatted_address}}
+  </p>
+         <p  ng-show="{{ c.category === 'violent-crime'}}">
+            There has been {{ crime.crimes.length }} Violent Crime related crimes in {{ place.formatted_address}}
+  </p>
+         <p  ng-show="{{ c.category === 'other-crime'}}">
+            There has been {{ crime.crimes.length }} Other Crime related crimes in {{ place.formatted_address}}
+  </p>
+</div>
+
     </p>
   </div>
 
 </section>
-
 
 </section>

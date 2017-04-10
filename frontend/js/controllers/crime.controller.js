@@ -17,6 +17,7 @@ function CrimeController(CrimeFactory) {
     ).then(
       (success) => {
         controller.crimes = success.data;
+        // controller.crimeName = success.data;
         console.log('Get crimes:', success.data);
       },
       (error) => {
@@ -25,10 +26,12 @@ function CrimeController(CrimeFactory) {
     );
   };
   init();
+
 }
 
-CrimeController.$inject = ['CrimeFactory'];
+CrimeController.$inject = ['CrimeFactory', '$state'];
 
 angular
   .module('PoliceApp')
+  // .filter('unique', CrimeController)
   .controller('CrimeController', CrimeController);
