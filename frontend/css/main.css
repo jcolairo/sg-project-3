@@ -29,10 +29,13 @@ body {
   border: 0px;
   height: 45px;
   padding: 0px;
+  background-color: #1b4080;
 }
 .submitButton {
   height: 30px;
   padding-top: 1px;
+  background-color: #1b4080;
+  color: white;
 }
 input {
   height: 30px;
