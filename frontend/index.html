@@ -34,22 +34,29 @@
 
 <body ng-controller="AuthController as auth">
   <section class="top">
-    <h1>Crime in an Area</h1>
 
-    <nav>
-      <a ui-sref="home" class="btn btn-primary">Home</a>
-      <a ui-sref="crime" class="btn btn-primary">Crimes</a>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <img ng-src="./css/images/metpolice-logo1.png" class="policeLogo" id="PLogo">
+      <img ng-src="./css/images/metpolice-logo2.png" class="policeLogo">
+
+      <a class="navbar-brand" ui-sref="home">Home</a>
+      <a class="navbar-brand" ui-sref="crime">Crime</a>
+
+      <div ng-if="auth.user">
+        <a ui-sref="home" ng-click="auth.signOut()" class="navbar-brand">Sign Out</a>
+      </div>
+
     </nav>
 
-    <img ng-src="./css/images/metpolice-logo1.png" class="policeLogo" id="PLogo">
-    <img ng-src="./css/images/metpolice-logo2.png" class="policeLogo">
+    <h1>Crime in an Area</h1>
 
     <div ng-if="auth.user">
           <p class="email">
           	Welcome {{ auth.user.email }}!, remember crime is bad!
-          </p>
-          <p>
-            <a href="#" ng-click="auth.signOut()" class="btn btn-primary signOut">Sign Out</a>
           </p>
         </div>
 
