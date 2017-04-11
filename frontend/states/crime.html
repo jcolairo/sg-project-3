@@ -44,8 +44,6 @@
 
   </form>
 
-  <ui-gmap-google-map center="map.map.center" zoom="map.map.zoom"></ui-gmap-google-map>
-
   <div ng-repeat="place in map.maps track by $index">
     <p>
 
@@ -98,6 +96,12 @@
             There has been <strong>{{ crime.crimes.length }}</strong>Other Crime related crimes in {{ place.formatted_address}} in {{ c.month}}
         </p>
       </div>
+
+      <ui-gmap-google-map center="crime.map.center" zoom="crime.map.zoom">
+        <ui-gmap-google-marker coords="crime.marker.coords" options="crime.marker.options" events="crime.marker.events" idkey="crime.marker.id">
+
+        </ui-gmap-google-marker>
+      </ui-gmap-google-map>
 
     </p>
   </div>
