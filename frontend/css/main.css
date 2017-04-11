@@ -12,33 +12,48 @@ h1 {
   display: inline-block;
 }
 * {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;
   text-align: center;
   padding: 10px;
 }
 body {
   background-color: #1b4080;
   color: white;
+  padding: 0;
+  margin: 0;
+  text-shadow: 1px 1px 10px #000;
+}
+
+.bg {
+  box-sizing: border-box;
+  background: url('images/police-car.jpg') center center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  border: 10px solid #1b4080;
+  background-color: rgba(255,255,255,.2);
+  background-blend-mode: overlay;
 }
 .policeLogo {
   height: 75px;
   padding: 0px;
-  position: relative;
-  top: 0;
-  left: 5px;
+  position: absolute;
+  top: 10px;
+  left: 90px;
 }
 #PLogo {
   height: 75px;
   padding: 0px;
-  position: relative;
-  top: 0;
+  position: absolute;
+  top: 10px;
   left: 0;
 }
 .googleButton {
   border: 0px;
   height: 45px;
   padding: 0px;
-  background-color: #1b4080;
+  background-color: transparent;
 }
 .submitButton {
   height: 30px;
@@ -58,7 +73,7 @@ input {
 }
 .officer-bob {
   height: 200px;
-  display: none;
+  /*display: none;*/
 }
 ol {
   display: inline-block;
@@ -66,9 +81,15 @@ ol {
 .angular-google-map-container { height: 400px; }
 
 .navbar {
+  position: relative;
   background-color: rgba(116, 139, 178,0.8);
   border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  padding-left: 90px;
 }
 .navbar-brand {
-  color: black !important
+  color: white !important
 }
