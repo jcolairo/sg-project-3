@@ -40,14 +40,14 @@ body {
   padding: 0px;
   position: absolute;
   top: 10px;
-  left: 90px;
+  left: 95px;
 }
 #PLogo {
   height: 75px;
   padding: 0px;
   position: absolute;
   top: 10px;
-  left: 0;
+  left: 5px;
 }
 .googleButton {
   border: 0px;
@@ -104,4 +104,7 @@ ol {
   background-color: rgba(116, 139, 178,0.8);
   margin: 10px;
   border: 2px solid white;
+}
+p {
+  font-size: 20px;
 }
