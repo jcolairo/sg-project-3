@@ -1,4 +1,4 @@
-function CrimeController(CrimeFactory) {
+function CrimeController(CrimeFactory, $state, $scope) {
   var controller = this;
 
   function init() {
@@ -7,32 +7,14 @@ function CrimeController(CrimeFactory) {
     controller.crimeLat = '';
     controller.crimeLng = '';
     controller.crimeDate = '';
+    controller.showMap = false;
     controller.map = { center: { latitude: 51.45, longitude: -0.3}, zoom: 15};
-    controller.marker = {
-      id: 0,
-      coords: {
-        latitude: 51.45,
-        longitude: -0.3
-      },
-      options: { draggable: true },
-      events: {
-        dragend: function(marker, eventName, $log) {
-          $log.log('marker dragend');
-          var lat = marker.getPosition().lat();
-          var lng = marker.getPosition().lng();
-          $log.log(lat);
-          $log.log(lng);
 
-          controller.marker.options = {
-            draggable: true,
-            labelContent: 'lat: ' + controller.marker.coords.latitude + ' ' + 'lng: ' + controller.marker.coords.longitude,
-            labelAnchor: '100 0',
-            labelClass: 'marker-label'
-          };
-        }
-      }
-    };
     controller.getCrimeDetails = function (lat, lng) {
+      controller.map.center = {
+        latitude: lat,
+        longitude: lng
+      };
       CrimeFactory.getAllCrimes(
       controller.crimeName,
       lat,
@@ -41,8 +23,11 @@ function CrimeController(CrimeFactory) {
     ).then(
       (success) => {
         controller.crimes = success.data;
+        controller.showMap = true;
+        controller.markers;
         // controller.crimeName = success.data;
         console.log('Get crimes:', success.data);
+
       },
       (error) => {
         console.warn('Could not get crimes', error);
@@ -52,7 +37,7 @@ function CrimeController(CrimeFactory) {
   }
   init();
 }
-CrimeController.$inject = ['CrimeFactory', '$state'];
+CrimeController.$inject = ['CrimeFactory', '$state', '$scope'];
 
 angular
   .module('PoliceApp')
