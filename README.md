@@ -22,8 +22,8 @@ To use this app:
 
 ##Technologies Used
 * The server is running with [`node.js`](https://nodejs.org/en/) and express
-* 
-* The model is processed via `mongod`.
+* The client-side is using `angular.js`
+* The model is processed via `mongod`
 * The app is built with HTML and CSS
 
 
