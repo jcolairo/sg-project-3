@@ -1,36 +1,32 @@
 # Sparta Global Webdev4 Project 3: Crime in a particular area
 
 ## Synopsis
-This project uses at least one external API rMVC approach and utilises HTTP requests. It allows the creation of new users and also updates the database so the user can add their favourite movies.
+This project uses two external API's (Google Maps and Police UK) to allow the user to know the number of crimes that take place in a given location. It also uses the rMVC approach and utilises HTTP requests. It allows user to enter in a certain location using the Google Maps API, then the Police UK API to get the type and number of crimes in that location.
 
-
-## Motivation
-
-This project was undertaken to solidify understand of HTTP methods and how this works server side and client side
+This project was undertaken to solidify understand of how to use external API's and the process that needs to take place in order to generate the informationf from them.
+It also solidified the relationship between server and client side and how they link together to generate the information.
 
 ## Installation
 
 To use this app:
-* Clone the [repository](https://github.com/jcolairo/users-movie-mvc.git)
+* Clone the [repository](https://github.com/jcolairo/sg-project-3)
 * In the command line `npm install` (this will install all the necessary dependancies stored in the `package.json` file)
-* To use locally you will need to run the seed file (pre-created data for users and movies) with this command in the terminal `npm run seed`.
 * In order to spin up the server the following command must be inputted to the terminal `npm run nodemon`.
 
 ## Functions
-* In order to create a user enter a first name, last name and email in the New User form, and press create.
-* The app allows the user to edit and delete their details
-* The user can also add their favourite movies
+* In order to use the app the user needs to firstly register with an email and a password. This allows the user to access the data from the API's.
+* Once they have logged in they then can access the google API by entering a location.
+* Then the user needs to enter a type of crime. They have an option to enter a date. If no date has been entered then it be defaulted to the most recent date in the Police API (at this moment in time it is 2017-01).
+* The user can then view the number of crimes that have been commited in that partiular area. 
+
 
 ##Technologies Used
-* The server is running with [`node.js`](https://nodejs.org/en/)
-* The database used is [`MongoDb`](https://www.mongodb.com/)
+* The server is running with [`node.js`](https://nodejs.org/en/) and express
+* 
 * The model is processed via `mongod`.
-* The views are generated via [`AJAX`](https://developer.mozilla.org/en-US/docs/AJAX)
 * The app is built with HTML and CSS
-* Animations are controlled via CSS
-* The apps behaviours (eg click events) are handle via [`jQuery`](https://jquery.com/) and installed via [`bower`](https://bower.io/)
+
 
 ## Contributors
 
-[David Corkett](https://github.com/morkett)
 [James Colairo](https://github.com/jcolairo)
