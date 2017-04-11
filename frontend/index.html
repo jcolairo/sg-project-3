@@ -52,24 +52,27 @@
 
     </nav>
 
-    <h1>Crime in an Area</h1>
+<section class="loginPageContainer">
+  <h1>Crime in an Area</h1>
 
-    <div ng-if="auth.user">
-          <p class="email">
-          	Welcome {{ auth.user.email }}!, remember crime is bad!
-          </p>
-        </div>
-
-        <div ng-if="!auth.user">
-          <p>Welcome new person!!</p>
-
-          <a ui-sref="login" class="btn btn-primary">Sign In</a> to sign in.
-          <br>
-          <a ui-sref="signup" class="btn btn-primary">Register</a> to register and see our secrets!
+  <div ng-if="auth.user">
+        <p class="email">
+          Welcome {{ auth.user.email }}!, remember crime is bad!
+        </p>
       </div>
+
+      <div ng-if="!auth.user">
+        <p>Welcome new person!!</p>
+
+        <a ui-sref="login" class="btn btn-primary">Sign In</a> to sign in.
+        <br>
+        <a ui-sref="signup" class="btn btn-primary">Register</a> to register and see our secrets!
+    </div>
+</section>
+
   </section>
 
-  <section ng-controller="MapController as map" ui-view class="bottom">
+  <section ng-controller="MapController as map" ui-view class="bottom loginPageContainer">
 
   </section>
 
