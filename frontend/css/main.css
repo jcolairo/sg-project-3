@@ -12,7 +12,6 @@ h1 {
   display: inline-block;
 }
 * {
-
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   text-align: center;
   padding: 10px;
@@ -24,6 +23,16 @@ body {
 .policeLogo {
   height: 75px;
   padding: 0px;
+  position: fixed;
+  top: 0;
+  left: 90px;
+}
+#PLogo {
+  height: 75px;
+  padding: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .googleButton {
   border: 0px;
