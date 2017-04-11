@@ -97,7 +97,7 @@
         </p>
       </div>
 
-      <ui-gmap-google-map ng-if="crime.showMap" center="crime.map.center" zoom="crime.map.zoom">
+      <ui-gmap-google-map ng-if="crime.showMap" center="crime.map.center" zoom="crime.map.zoom" options= "crime.map.options">
         <ui-gmap-marker ng-repeat="marker in crime.crimes" coords="marker.location" idkey="marker.id">
         </ui-gmap-marker>
       </ui-gmap-google-map>
