@@ -8,6 +8,7 @@ function CrimeController(CrimeFactory, $state) {
     controller.crimeLng = '';
     controller.crimeDate = '';
     controller.showMap = false;
+    controller.names = ['drugs', 'ASB', 'burglary'];
     controller.map = {
       center: { latitude: 51.45, longitude: -0.3},
       zoom: 13,
