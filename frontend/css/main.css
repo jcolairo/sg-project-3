@@ -56,7 +56,7 @@ body {
   background-color: transparent;
 }
 .submitButton {
-  height: 30px;
+  height: 35px;
   padding-top: 1px;
   background-color: #1b4080;
   color: white;
@@ -73,6 +73,9 @@ input {
 }
 .top {
   padding-bottom: 0px;
+}
+section.top {
+  padding: 0px;
 }
 .bottom {
   padding-top: 0px;
@@ -106,7 +109,7 @@ ol {
 }
 .loginPageContainer {
   background-color: rgba(116, 139, 178,0.8);
-  margin: 10px;
+  margin: 10px 0px;
   border: 2px solid white;
 }
 p {
