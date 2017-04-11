@@ -79,7 +79,11 @@ input {
 }
 .officer-bob {
   height: 200px;
-  /*display: none;*/
+  /*display: flex;*/
+  justify-content: center;
+  align-items: center;
+  width: 121px;
+  margin: 0px;
 }
 ol {
   display: inline-block;
