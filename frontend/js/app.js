@@ -1,4 +1,4 @@
-function MainRouter ($stateProvider, $urlRouterProvider, AuthFactory) {
+function MainRouter ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state('home', {
