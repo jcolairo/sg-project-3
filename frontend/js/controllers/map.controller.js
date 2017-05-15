@@ -2,7 +2,6 @@ function MapController(MapFactory) {
   var controller = this;
 
   function init() {
-    console.log('MapController', controller);
     controller.placeName = '';
   }
 

@@ -48,7 +48,6 @@ function AuthController($state, AuthFactory) {
     controller.email = '';
     controller.password = '';
     AuthFactory.$onAuthStateChanged(function(user) {
-      console.log('auth state changed: user:', user);
       controller.user = user;
     });
   }

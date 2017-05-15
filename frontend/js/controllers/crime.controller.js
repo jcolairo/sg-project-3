@@ -2,7 +2,6 @@ function CrimeController(CrimeFactory, $state) {
   var controller = this;
 
   function init() {
-    console.log('CrimeController', controller);
     controller.crimeName = '';
     controller.crimeLat = '';
     controller.crimeLng = '';
@@ -379,7 +378,6 @@ function CrimeController(CrimeFactory, $state) {
       }
     };
 
-    console.log(controller.map.styles);
 
     controller.getCrimeDetails = function (lat, lng) {
       controller.map.center = {
